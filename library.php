@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
+  <link rel="stylesheet" href="css.css">
   <?php
      include 'webbuild/dataconn.php'
     
@@ -16,13 +17,37 @@
 </head>
  <body>
     <title>Hello, world!</title>
-    <?php require_once 'webbuild/header.php';
-    $sql = "SELECT nummer, kurztitle, autor from buecher";
+    <?php require_once 'webbuild/header.php';?>
+    <table class="table">
+      <thead>
+        <tr>
+        <th scope="col">5</th>
+        <th scope="col">5</th>
+        <th scope="col">5</th>
+        <th scope="col">5</th>
+        </tr>
+      </thead>
+      <tbody>
+    <?php
+    $sql = "SELECT kurztitle, kategorie, autor, zustand from buecher limit 20";
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
       // output data of each row
       while($row = $result->fetch_assoc()) {
-        echo "nummer: " . $row["nummer"]. " - kurztitle: " . $row["kurztitle"]. " " . $row["autor"]. "<br>";
+        //echo "nummer: " . $row["nummer"]. " - kurztitle: " . $row["kurztitle"]. " " . $row["autor"]. "<br>";
+        echo "<tr>";
+        echo "<td>". $row['kurztitle'] . "</td>";
+        echo "<td>". $row['kategorie'] . "</td>";
+        echo "<td>". $row['autor'] . "</td>";
+        echo "<td>". $row['zustand'] . "</td>";
+        echo "</td>";
+        echo "<div class='btn-group'>";
+        echo"<td> <form value=✎></form> </td>";
+        echo "<td> <form value=🗑></form> </td>";
+        echo "</div>";
+        echo "</td>";
+        echo "</tr>";
+        echo "</tbody>";
       }
     } else {
       echo "0 results";

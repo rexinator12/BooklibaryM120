@@ -1,4 +1,5 @@
 <!-- Footer -->
+<div id="footer">
 <footer class=" text-center text-white" style="background-color:#35363a;">
   <!-- Grid container -->
   <div class="container p-4">
@@ -120,4 +121,5 @@
   <!-- Copyright -->
 
 </footer>
+</div>
 <!-- Footer -->
