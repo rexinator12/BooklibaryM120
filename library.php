@@ -4,7 +4,6 @@
   <link rel="stylesheet" href="css.css">
   <?php
      include 'webbuild/dataconn.php'
-    
     ?>
     <?php 
     ?>
@@ -18,13 +17,16 @@
  <body>
     <title>Hello, world!</title>
     <?php require_once 'webbuild/header.php';?>
-    <table class="table">
+    <div class="table">
+    <table>
       <thead>
         <tr>
-        <th scope="col">5</th>
-        <th scope="col">5</th>
-        <th scope="col">5</th>
-        <th scope="col">5</th>
+        <th scope="col">kurztitle</th>
+        <th scope="col">kategorie</th>
+        <th scope="col">autor</th>
+        <th scope="col">zustand</th>
+        <th scope="col">coque</th>
+        <th scope="col">Löschen</th>
         </tr>
       </thead>
       <tbody>
@@ -34,17 +36,14 @@
     if ($result->num_rows > 0) {
       // output data of each row
       while($row = $result->fetch_assoc()) {
-        //echo "nummer: " . $row["nummer"]. " - kurztitle: " . $row["kurztitle"]. " " . $row["autor"]. "<br>";
         echo "<tr>";
         echo "<td>". $row['kurztitle'] . "</td>";
         echo "<td>". $row['kategorie'] . "</td>";
         echo "<td>". $row['autor'] . "</td>";
         echo "<td>". $row['zustand'] . "</td>";
         echo "</td>";
-        echo "<div class='btn-group'>";
-        echo"<td> <form value=✎></form> </td>";
-        echo "<td> <form value=🗑></form> </td>";
-        echo "</div>";
+        echo "<td> <form action='#' method='POST'></form><input class='btn btn-primary' type='submit' value='✎'></td>";
+        echo "<td> <form action='#' method='POST'>  </form><input class='btn btn-danger' type='submit' value='L'></td>";
         echo "</td>";
         echo "</tr>";
         echo "</tbody>";
@@ -54,6 +53,9 @@
     }
     $conn->close();
     ?>
+    </tbody>
+    </table>
+    </div>
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
@@ -64,7 +66,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     -->
-    <?php require_once 'webbuild/footer.php'
-    ?>
+    <?php //require_once 'webbuild/footer.php'
+    ?> 
   </body>
 </html>
