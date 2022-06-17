@@ -3,7 +3,9 @@
   <head>
   <link rel="stylesheet" href="css.css">
   <?php
-     include 'webbuild/dataconn.php'
+     include 'dataconn.php';
+     include 'getBooks.class.php';
+     include 'ViewLibrary.class.php';
     ?>
     <?php 
     ?>
@@ -31,27 +33,8 @@
       </thead>
       <tbody>
     <?php
-    $sql = "SELECT kurztitle, kategorie, autor, zustand from buecher limit 20";
-    $result = $conn->query($sql);
-    if ($result->num_rows > 0) {
-      // output data of each row
-      while($row = $result->fetch_assoc()) {
-        echo "<tr>";
-        echo "<td>". $row['kurztitle'] . "</td>";
-        echo "<td>". $row['kategorie'] . "</td>";
-        echo "<td>". $row['autor'] . "</td>";
-        echo "<td>". $row['zustand'] . "</td>";
-        echo "</td>";
-        echo "<td> <form action='#' method='POST'></form><input class='btn btn-primary' type='submit' value='✎'></td>";
-        echo "<td> <form action='#' method='POST'>  </form><input class='btn btn-danger' type='submit' value='L'></td>";
-        echo "</td>";
-        echo "</tr>";
-        echo "</tbody>";
-      }
-    } else {
-      echo "0 results";
-    }
-    $conn->close();
+      $library = new ViewLibrary();
+      $library->showAllBooks();
     ?>
     </tbody>
     </table>
