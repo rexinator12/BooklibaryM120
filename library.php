@@ -32,7 +32,15 @@
         </tr>
       </thead>
       <tbody>
+      <form action="index.php" method="post">
+      <select name="family">
+         <option value="" selected="selected">Any family</option>
+         <option value="capacitor">capacitor</option>
+         <option value="resistor">resistor</option>
+         <option value="ferrite bead">ferrite bead</option>
+      </select>
     <?php
+    
       $library = new ViewLibrary();
       $library->showAllBooks();
     ?>
