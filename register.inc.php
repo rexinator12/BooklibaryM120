@@ -8,15 +8,15 @@ if(isset($_POST["submit"]))
     $lastn = $_POST["lastname"];
     $password = $_POST["password"];
     $reppassword = $_POST["reppassword"];
+    $admin = 0;
 
     include "dataconn.php";
     include "register.class.php";
     include "register-contr.class.php";
-    $register = new regichange($username,$mail,$firstn,$lastn,$password,$reppassword);
-
+    $register = new regichange($username,$mail,$firstn,$lastn,$password,$reppassword, $admin);
     $register->registered();
-    
-    header("index.php?error=none");
+    header("location: index.php");
+
  
    
 

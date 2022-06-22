@@ -1,18 +1,15 @@
 <?php
 class dbh{
-  private $servername;
-  private $username;
-  private $password;
-  private $dbname;
-  
 
  protected function connect(){
-  $this->servername = "localhost";
-  $this->username = "root";
-  $this->password = "";
-  $this->dbname = "libary";
-
-  $conn = new mysqli($this->servername, $this->username, $this->password, $this->dbname);
-  return $conn;
+  try{
+  $username = "root";
+  $password ="";
+  $dbh = new PDO('mysql:host=localhost;dbname=libary', $username, $password);
+  return $dbh;
+  }
+  catch(PDOEception $e){
+    print "Error!: ". $e->getMessage."<br/>";
  }
+}
 }

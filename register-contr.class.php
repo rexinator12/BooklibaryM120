@@ -7,14 +7,16 @@ class regichange extends Register{
     private $lastn;
     private $password;
     private $reppassword;
+    private $admin;
 
-    public function __construct($username,$mail,$firstn,$lastn,$password,$reppassword){
+    public function __construct($username,$mail,$firstn,$lastn,$password,$reppassword, $admin){
         $this->username = $username;
         $this->mail = $mail;
         $this->firstn = $firstn;
         $this->lastn = $lastn;
         $this->password = $password;
         $this->reppassword = $reppassword;
+        $this->admin = $admin;
         
     }
     public function registered(){
@@ -47,7 +49,7 @@ class regichange extends Register{
             exit;
         }
 
-        $this->setUser($this->username, $this->firstn, $this->lastn, $this->password, $this->mail);
+        $this->setUser($this->username, $this->firstn, $this->lastn, $this->password, $this->mail, $this->admin);
 
     }
 
