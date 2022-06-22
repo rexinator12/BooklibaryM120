@@ -29,7 +29,22 @@
           <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
         </li>
       </ul>
-      <a class="nav-link active" href="#">Login</a>
+      <li class="nav-item">
+        <?php 
+          if(isset($_SESSION["userID"]))
+          {
+        ?>
+          <li><a herf="#"><?php echo $_SESSION["userID"]; ?></a></li>
+          <li><a herf="logout.php">Logout</a></li>
+        <?php
+          }else
+          {
+            ?>
+            <a herf="login.php" class="nav-link">Login</a>
+            <?php
+          }
+          ?>
+          </li>
     </div>
   </div>
 </nav>
