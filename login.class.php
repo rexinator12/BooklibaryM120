@@ -27,14 +27,15 @@ class Login extends dbh {
     }
     elseif($checkPassword ==true){
         $stmt = $this->connect()->prepare('SELECT * FROM benutzer where benutzername = ? OR email = ? and passwort = ?;');
+        
         if(!$stmt->execute(array($username,$username,$password))){
             $stmt = null;
             echo $stmt;
             header("location: index.php?error=stmtfailed");
             exit;
+        }
 
-            if($stmt->rowCount()==0)
-    {
+            if($stmt->rowCount()==0){
         $stmt = null;
         header("location: index.php?error=usernotfound");
         exit();
@@ -44,8 +45,8 @@ class Login extends dbh {
         $_SESSION["userID"] = $user[0]["ID"];
         $_SESSION["username"] = $user[0]["benutzername"];
         $stmt = null;
-        }
-    }
+        
+    
     $stmt = null;
 }
 
@@ -53,4 +54,5 @@ class Login extends dbh {
 
     
 
+}
 }

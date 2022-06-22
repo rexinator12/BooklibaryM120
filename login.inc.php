@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 if(isset($_POST["submit"]))
 { 
     $username = $_POST["username"];
@@ -9,7 +9,6 @@ if(isset($_POST["submit"]))
     include "login-contr.class.php";
     $login = new loginer($username,$password);
     $login->loginUser();
-   
     header("Location: index.php");
 
  

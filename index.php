@@ -1,5 +1,9 @@
 <?php
  session_start();
+ if(empty($_SESSION["userID"])){
+    header("location: login.php?error=haventlogin")
+ } else
+ {
  ?>
 <!doctype html>
 <html lang="en">
@@ -29,5 +33,6 @@
     -->
     <?php require_once 'webbuild/footer.php'
     ?>
+    <?php }?>
   </body>
 </html>

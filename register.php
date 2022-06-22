@@ -64,7 +64,7 @@
             </div>
 
             <div>
-              <p class="mb-0">Do you have an account? <a href="login.php" class="text-white-50 fw-bold">Sign Up</a>
+              <p class="mb-0">Do you have an account? <a href="login.php" class="text-white-50 fw-bold">Log in</a>
               </p>
               </form>
             </div>
