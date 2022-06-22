@@ -1,6 +1,6 @@
 <?php
 class Login extends dbh {
-    protected function setUser($username, $password){
+    protected function getUser($username, $password){
         $stmt = $this->connect()->prepare('SELECT passwort FROM benutzer where benutzername = ? OR email = ?;');
         
     if(!$stmt->execute(array($username,$password))){
@@ -18,11 +18,11 @@ class Login extends dbh {
     }
     
     $passwordHashed = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    $checkPassword = password_verify($password, $passwordHashed[0]["password"]);
+    $checkPassword = password_verify($password, $passwordHashed[0]["passwort"]);
     if($checkPassword== false)
     {
         $stmt = null;
-        header("location: index.php?error=usernotfound");
+        header("location: index.php?error=usernotfoundx");
         exit();
     }
     elseif($checkPassword ==true){

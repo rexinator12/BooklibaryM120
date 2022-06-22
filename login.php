@@ -23,18 +23,18 @@
               <p class="text-white-50 mb-5">Please enter your login and password!</p>
 
               <div class="form-outline form-white mb-4">
-                <input type="text" id="username" class="form-control form-control-lg" />
+                <input type="text" name="username" class="form-control form-control-lg" />
                 <label class="form-label" for="username">Username or mail</label>
               </div>
 
               <div class="form-outline form-white mb-4">
-                <input type="password" id="password" class="form-control form-control-lg" />
+                <input type="password"  name="password" class="form-control form-control-lg" />
                 <label class="form-label" for="password">Password</label>
               </div>
 
               <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">Forgot password?</a></p>
 
-              <button class="btn btn-outline-light btn-lg px-5" type="submit">Login</button>
+              <button class="btn btn-outline-light btn-lg px-5" type="submit" name="submit">Login</button>
 
               <div class="d-flex justify-content-center text-center mt-4 pt-1">
                 <a href="#!" class="text-white"><i class="fab fa-facebook-f fa-lg"></i></a>

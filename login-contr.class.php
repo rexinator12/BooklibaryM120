@@ -9,14 +9,14 @@ class loginer extends Login{
         $this->username = $username;
         $this->password = $password;
         
+        
     }
     public function loginUser(){
         if($this->emptyIn() == false){
             header("location: index.php?error=emptyinput");
             exit;
         }
-        
-
+    
         $this->getUser($this->username,$this->password);
 
     }
