@@ -1,7 +1,8 @@
 <?php
  session_start();
  if(empty($_SESSION["userID"])){
-    header("location: login.php?error=haventlogin")
+  $_SESSION["status"] = "You must login!";
+  header("location: login.php");
  } else
  {
  ?>
@@ -31,8 +32,9 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     -->
-    <?php require_once 'webbuild/footer.php'
+    <?php require_once 'webbuild/footer.php';
+      }
+ 
     ?>
-    <?php }?>
   </body>
 </html>

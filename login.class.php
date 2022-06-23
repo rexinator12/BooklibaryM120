@@ -1,4 +1,5 @@
 <?php
+session_start();
 class Login extends dbh {
     protected function getUser($username, $password){
         $stmt = $this->connect()->prepare('SELECT passwort FROM benutzer where benutzername = ? OR email = ?;');
@@ -6,14 +7,16 @@ class Login extends dbh {
     if(!$stmt->execute(array($username,$password))){
         $stmt = null;
         echo $stmt;
-        header("location: index.php?error=stmtfailed");
+        $_SESSION["status"] = "STMT Failed!";
+        header("location: login.php?error=stmtfailed");
         exit;
     }
 
     if($stmt->rowCount()==0)
     {
         $stmt = null;
-        header("location: index.php?error=usernotfound");
+        $_SESSION["status"] = "User not found!";
+        header("location: login.php?error=usernotfound");
         exit();
     }
     
@@ -22,7 +25,8 @@ class Login extends dbh {
     if($checkPassword== false)
     {
         $stmt = null;
-        header("location: index.php?error=usernotfoundx");
+        $_SESSION["status"] = "User not found!";
+        header("location: login.php?error=usernotfoundx");
         exit();
     }
     elseif($checkPassword ==true){
@@ -31,12 +35,14 @@ class Login extends dbh {
         if(!$stmt->execute(array($username,$username,$password))){
             $stmt = null;
             echo $stmt;
-            header("location: index.php?error=stmtfailed");
+            $_SESSION["status"] = "STMT Failed!";
+            header("location: login.php?error=stmtfailed");
             exit;
         }
 
             if($stmt->rowCount()==0){
         $stmt = null;
+        $_SESSION["status"] = "User not found!";
         header("location: index.php?error=usernotfound");
         exit();
     }
