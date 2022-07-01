@@ -10,7 +10,7 @@ class ViewLibrary extends library{
         echo "<td>". $data['zustand'] . "</td>";
         echo "</td>";
         echo "<td> <form action='#' method='POST'></form><input class='btn btn-primary' type='submit' value='✎'></td>";
-        echo "<td> <form action='#' method='POST'>  </form><input class='btn btn-danger' type='submit' value='L'></td>";
+        echo "<td> <form action='#' method='POST'>  </form><input class='btn btn-danger' type='submit' value='🗑'></td>";
         echo "</td>";
         echo "</tr>";
         echo "</tbody>";

@@ -40,17 +40,17 @@
         </tr>
       </thead>
       <tbody>
-      <form action="index.php" method="post">
-      <select name="family">
-         <option value="" selected="selected">Any family</option>
-         <option value="capacitor">capacitor</option>
-         <option value="resistor">resistor</option>
-         <option value="ferrite bead">ferrite bead</option>
-      </select>
+      <div class="search">
+      <form action="getBooks.class.php" method="post">
+        
+        <b>Search: </b> <input type="text" name="search_box" value=""/>
+        <input type="submit" name="search" value="🔎">
+        </form>
+ </div>
     <?php
-    
       $library = new ViewLibrary();
       $library->showAllBooks();
+      
     ?>
     </tbody>
     </table>
