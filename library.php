@@ -27,26 +27,19 @@
  <body>
     <title>Hello, world!</title>
     <?php require_once 'webbuild/header.php';?>
-    <div class="table">
-    <table>
-      <thead>
-        <tr>
-        <th scope="col">kurztitle</th>
-        <th scope="col">kategorie</th>
-        <th scope="col">autor</th>
-        <th scope="col">zustand</th>
-        <th scope="col">coque</th>
-        <th scope="col">Löschen</th>
-        </tr>
-      </thead>
-      <tbody>
-      <div class="search">
-      <form action="getBooks.class.php" method="post">
-        
-        <b>Search: </b> <input type="text" name="search_box" value=""/>
-        <input type="submit" name="search" value="🔎">
-        </form>
- </div>
+    <form>
+            <b>Search: </b> <input type='text' name='search_box' value=''/>
+            <button class='input-group-text'><i class='fa fa-search'></i></button>
+    </form>
+    <select class="col-md-4-select" aria-label="Default select example">
+  <option selected>Open this select menu</option>
+  <option value="1">One</option>
+  <option value="2">Two</option>
+  <option value="3">Three</option>
+  </select>
+    
+  
+      
     <?php
       $library = new ViewLibrary();
       $library->showAllBooks();

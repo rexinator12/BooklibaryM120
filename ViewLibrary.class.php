@@ -1,8 +1,25 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <?php
 class ViewLibrary extends library{
     public function showAllBooks(){
             $datas = $this->getAllBooks();
+            //if(!empty($datas)){
+            echo "
+            <div class='table'>
+            <table>
+            <tbody>";
+            echo" <thead>
+            <tr>
+            <th scope='col'>kurztitle</th>
+            <th scope='col'>kategorie</th>
+            <th scope='col'>autor</th>
+            <th scope='col'>zustand</th>
+            <th scope='col'>coque</th>
+            <th scope='col'>Löschen</th>
+            </tr>
+          </thead>";
             foreach ($datas as $data){
+
                 echo "<tr>";
         echo "<td>". $data['kurztitle'] . "</td>";
         echo "<td>". $data['kategorie'] . "</td>";
@@ -14,7 +31,12 @@ class ViewLibrary extends library{
         echo "</td>";
         echo "</tr>";
         echo "</tbody>";
-            }
+           // }
+        //}else{
+         //   echo "Keine Datenübereinstimmung";
+        //}
         
-    }
+    
+}
+}
 }
