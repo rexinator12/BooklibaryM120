@@ -8,7 +8,7 @@ if(isset($_POST["submit"]))
     $lastn = $_POST["lastname"];
     $password = $_POST["password"];
     $reppassword = $_POST["reppassword"];
-    $admin = 0;
+    $admin = null;
 
     include "dataconn.php";
     include "register.class.php";

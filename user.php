@@ -12,8 +12,8 @@
   <link rel="stylesheet" href="css.css">
   <?php
      include 'dataconn.php';
-     include 'getBooks.class.php';
-     include 'ViewLibrary.class.php';
+     include 'getUsers.class.php';
+     include 'ViewUser.class.php';
     ?>
     <?php 
     ?>
@@ -30,39 +30,19 @@
     <title>Hello, world!</title>
     <?php require_once 'webbuild/header.php';?>
     <form>
-            <b>Search: </b> <input type='text' name='search_box' value=''/>
+            <b>Search: </b> <input type='text' name='search_boxU' value=''/>
             <button class='input-group-text'><i class='fa fa-search'></i></button>
     </form>
-    <select class="col-md-4-select" aria-label="Default select example" name="fillt" id="fillt">
-  <option value="" disabeld="" selected="">Open this select menu</option>
-  <option value="1">Alte Drucke, Bibeln, Klassische Autoren in den Originalsprachen</option>
-  <option value="2">Geographie und Reisen</option>
-  <option value="3">Geschichtswissenschaften</option>
-  <option value="4">Naturwissenschaften</option>
-  <option value="5">Kinderbücher</option>
-  <option value="6">Moderne Literatur und Kunst</option>
-  <option value="7">Moderne Kunst und Künstlergraphik</option>
-  <option value="8">Kunstwissenschaften</option>
-  <option value="9">Architektur</option>
-  <option value="10">Technik</option>
-  <option value="11">Naturwissenschaften - Medizin</option>
-  <option value="12">Ozeanien</option>
-  <option value="13">Afrika</option>
-  </select>
-  
+    
   
     
   
       
     <?php
-      $library = new ViewLibrary();
-      $library->showAllBooks();
+      $Users = new ViewUsers();
+      $Users->showAllUsers();
       
-      for($pageNumber = 1; $pageNumber<=$maxP;$pageNumber++){?>
-      <a herf="?page=<?= $pageNumber?>"><?= $pageNumber ?></a>
-    <?php } ?>
-    
-
+    ?>
     </tbody>
     </table>
     </div>
