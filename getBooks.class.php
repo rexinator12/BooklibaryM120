@@ -13,6 +13,7 @@ class library extends dbh{
       $maxP = (int)ceil($maxE/$datensatze);
       $page =max(1,min($maxP,$page));
       $offset = ($page - 1) * $datensatze; 
+      
         $sql = "SELECT b.kurztitle, k.kategorie, b.autor, b.zustand from buecher as b JOIN kategorien as k where b.kategorie = k.ID limit $offset,$datensatze";
         if(isset($_GET['search_box'])){
           $search ='%'.$_GET['search_box'].'%';

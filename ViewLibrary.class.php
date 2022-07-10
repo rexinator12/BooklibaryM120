@@ -16,7 +16,8 @@ class ViewLibrary extends library{
             <th scope='col'>kurztitle</th>
             <th scope='col'>kategorie</th>
             <th scope='col'>autor</th>
-            <th scope='col'>zustand</th>";
+            <th scope='col'>zustand</th>
+            <th scope='col'>Öffnen</th>";
             if($admin == 1){
             echo"<th scope='col'>coque</th>
             <th scope='col'>Löschen</th>";
@@ -32,6 +33,8 @@ class ViewLibrary extends library{
         echo "<td>". $data['autor'] . "</td>";
         echo "<td>". $data['zustand'] . "</td>";
         echo "</td>";
+        echo "<td><a href='openView.php?view=". $data['kurztitle']."' class='btn btn-primary'>👁️</a></td>";
+
         if($admin == 1){
         echo "<td> <form action='#' method='POST'></form><input class='btn btn-primary' type='submit' value='✎'></td>";
         echo "<td> <form action='#' method='POST'>  </form><input class='btn btn-danger' type='submit' value='🗑'></td>";

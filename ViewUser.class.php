@@ -16,6 +16,7 @@ class ViewUsers extends Users{
             <th scope='col'>Name</th>
             <th scope='col'>Vorname</th>
             <th scope='col'>E-Mail</th>";
+            
             if($admin == 1){
             echo"<th scope='col'>coque</th>
             <th scope='col'>Löschen</th>";
