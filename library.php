@@ -20,7 +20,6 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>        
 
 
     <!-- Bootstrap CSS -->
@@ -29,38 +28,54 @@
  <body>
     <title>Hello, world!</title>
     <?php require_once 'webbuild/header.php';?>
-    <form>
-            <b>Search: </b> <input type='text' name='search_box' value=''/>
-            <button class='input-group-text'><i class='fa fa-search'></i></button>
-    </form>
-    <select class="col-md-4-select" aria-label="Default select example" name="fillt" id="fillt">
+    <div class="search">
+    <form class="form-horizontal" action="library.php" method="POST">
+<b>Titel: </b> <input type='text' name='titel' value=''/>
+
+ </br><select class="col-md-4-select" aria-label="Default select example" name="kat" id="fillt">
   <option value="" disabeld="" selected="">Open this select menu</option>
-  <option value="1">Alte Drucke, Bibeln, Klassische Autoren in den Originalsprachen</option>
-  <option value="2">Geographie und Reisen</option>
-  <option value="3">Geschichtswissenschaften</option>
-  <option value="4">Naturwissenschaften</option>
-  <option value="5">Kinderbücher</option>
-  <option value="6">Moderne Literatur und Kunst</option>
-  <option value="7">Moderne Kunst und Künstlergraphik</option>
-  <option value="8">Kunstwissenschaften</option>
-  <option value="9">Architektur</option>
-  <option value="10">Technik</option>
-  <option value="11">Naturwissenschaften - Medizin</option>
-  <option value="12">Ozeanien</option>
-  <option value="13">Afrika</option>
+  <option value="Alte Drucke, Bibeln, Klassische Autoren in den Originalsprachen">Alte Drucke, Bibeln, Klassische Autoren in den Originalsprachen</option>
+  <option value="Geographie und Reisen">Geographie und Reisen</option>
+  <option value="Geschichtswissenschaften">Geschichtswissenschaften</option>
+  <option value="Naturwissenschaften">Naturwissenschaften</option>
+  <option value="Kinderbücher">Kinderbücher</option>
+  <option value="Moderne Literatur und Kunst">Moderne Literatur und Kunst</option>
+  <option value="Moderne Kunst und Künstlergraphik">Moderne Kunst und Künstlergraphik</option>
+  <option value="Kunstwissenschaften">Kunstwissenschaften</option>
+  <option value="Architektur">Architektur</option>
+  <option value="Technik">Technik</option>
+  <option value="Naturwissenschaften">Naturwissenschaften - Medizin</option>
+  <option value="Ozeanien">Ozeanien</option>
+  <option value="Afrika">Afrika</option>
   </select>
+
+ </br><b>Autor: </b> <input type='text' name='autor' value=''/>
+
+ <div class="form-group">
+  <label class="col-lg-2 control-label"><b>Zustand: </b></label>
+  <div class="col-lg-4">
+    <input type="radio" name="zustand" value="G">Gut
+    <input type="radio" name="zustand" value="M">Mittel
+    <input type="radio" name="zustand" value="S">Schlecht
+ </div>
+ </div>
+
+
+ 
+ <input type="submit" name="submit" class="btn btn-primary">
+ </div>
+ </form>
   
   
     
   
       
     <?php
+    require_once 'getBooks.class.php';
       $library = new ViewLibrary();
       $library->showAllBooks();
       
-      for($pageNumber = 1; $pageNumber<=$maxP;$pageNumber++){?>
-      <a herf="?page=<?= $pageNumber?>"><?= $pageNumber ?></a>
-    <?php } ?>
+?>
     
 
     </tbody>

@@ -1,6 +1,7 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <?php
+
 class ViewLibrary extends library{
     public function showAllBooks(){
             $datas = $this->getAllBooks();
@@ -33,7 +34,7 @@ class ViewLibrary extends library{
         echo "<td>". $data['autor'] . "</td>";
         echo "<td>". $data['zustand'] . "</td>";
         echo "</td>";
-        echo "<td><a href='openView.php?view=". $data['kurztitle']."' class='btn btn-primary'>👁️</a></td>";
+        echo "<td><a href='openView.php?view=". $data['id']."' class='btn btn-primary'>👁️</a></td>";
 
         if($admin == 1){
         echo "<td> <form action='#' method='POST'></form><input class='btn btn-primary' type='submit' value='✎'></td>";
@@ -42,6 +43,8 @@ class ViewLibrary extends library{
         echo "</td>";
         echo "</tr>";
         echo "</tbody>";
+
+        
         
            // }
         //}else{
@@ -50,5 +53,6 @@ class ViewLibrary extends library{
         
     
 }
+
 }
 }

@@ -21,13 +21,37 @@
     <title>Hello, world!</title>
     <?php require_once 'webbuild/header.php';
         require_once 'dataconn.php';
+        require_once 'getBooks.class.php';
 
+
+        class OpenView extends dbh{
+          function ViewBooks(){
     if(isset($_GET['view'])){
-        $title = $_GET['view'];
-        $sql = "SELECT b.kurztitle, k.kategorie, b.autor, b.zustand from buecher as b JOIN kategorien as k where b.kategorie = k.ID AND b.kurztitle = $title";
+        $id = $_GET['view'];
+        $sql = "SELECT b.kurztitle, b.title, k.kategorie, b.autor, b.zustand, b.foto from buecher as b JOIN kategorien as k where b.kategorie = k.ID AND b.id = $id";
         $result = $this->connect()->query($sql);
+        while($row = $result->fetch()) {
+          $data[] = $row;
+          echo "<div class='View'>";
+          echo "<img src='".$row['foto']."' width='230px'height='200px'>";
+          echo "</br><h4>Titel:</h4><p> ".$row['kurztitle']."</p></br>";
+          echo "</br><h4>Inhaltsverzeichnis:</h4><p>".$row['title']."</p></br>";
+          echo "</br><h4>Kategorie:</h4><p> ".$row['kategorie']."</p></br>";
+          echo "</br><h4>Autor:</h4><p> ".$row['autor']."</p></br>";
+          echo "</br><h4>Zustand:</h4><p> ".$row['zustand']."</p></br>";
+          echo "</div>";
+          
+    }
+    
+
+
         
     }
+  }
+}
+$view = new OpenView();
+$view->ViewBooks();
+
     ?>
 
     <!-- Optional JavaScript; choose one of the two! -->
@@ -40,7 +64,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     -->
-    <?php require_once 'webbuild/footer.php';
+    <?php //require_once 'webbuild/footer.php';
       }
  
     ?>
