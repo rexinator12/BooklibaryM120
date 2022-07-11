@@ -24,13 +24,12 @@ class library extends dbh{
     }
       
         $sql = "SELECT b.id, b.kurztitle, k.kategorie, b.autor, b.zustand from buecher as b JOIN kategorien as k where b.kategorie = k.ID limit $start,$numberpage";
-        if(isset($_POST['submit'])){
+        if(isset($_GET['submit'])){
           $titel ='%'. $_POST['titel'].'%';
-          $kat = '%'.$_POST['kat'].'%';
-          $autor = '%'.$_POST['autor'].'%';
-          $zustand = '%'.$_POST['zustand'].'%';   
-          $sql = "SELECT b.id, b.kurztitle, k.kategorie, b.autor, b.zustand from buecher as b JOIN kategorien as k where b.kategorie = k.kategorie AND b.kurztitle like '$titel' AND k.ID like '$kat'AND b.autor like '$autor'AND b.zustand like '$titel' LIMIT $start,$numberpage";  
-          
+          //$kat = '%'.$_POST['kat'].'%';
+          //$autor = '%'.$_POST['autor'].'%';
+          //$zustand = '%'.$_POST['zustand'].'%';   
+          $sql = "SELECT b.id, b.kurztitle, k.kategorie, b.autor, b.zustand from buecher as b JOIN kategorien as k where b.kategorie = k.ID AND b.kurztitle like '$titel' LIMIT $start,$numberpage";  
 
         }
         

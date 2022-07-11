@@ -34,20 +34,21 @@
 
  </br><select class="col-md-4-select" aria-label="Default select example" name="kat" id="fillt">
   <option value="" disabeld="" selected="">Open this select menu</option>
-  <option value="Alte Drucke, Bibeln, Klassische Autoren in den Originalsprachen">Alte Drucke, Bibeln, Klassische Autoren in den Originalsprachen</option>
-  <option value="Geographie und Reisen">Geographie und Reisen</option>
-  <option value="Geschichtswissenschaften">Geschichtswissenschaften</option>
-  <option value="Naturwissenschaften">Naturwissenschaften</option>
-  <option value="Kinderbücher">Kinderbücher</option>
-  <option value="Moderne Literatur und Kunst">Moderne Literatur und Kunst</option>
-  <option value="Moderne Kunst und Künstlergraphik">Moderne Kunst und Künstlergraphik</option>
-  <option value="Kunstwissenschaften">Kunstwissenschaften</option>
-  <option value="Architektur">Architektur</option>
-  <option value="Technik">Technik</option>
-  <option value="Naturwissenschaften">Naturwissenschaften - Medizin</option>
-  <option value="Ozeanien">Ozeanien</option>
-  <option value="Afrika">Afrika</option>
+  <option value="1">Alte Drucke, Bibeln, Klassische Autoren in den Originalsprachen</option>
+  <option value="2">Geographie und Reisen</option>
+  <option value="3">Geschichtswissenschaften</option>
+  <option value="4">Naturwissenschaften</option>
+  <option value="5">Kinderbücher</option>
+  <option value="6">Moderne Literatur und Kunst</option>
+  <option value="7">Moderne Kunst und Künstlergraphik</option>
+  <option value="8">Kunstwissenschaften</option>
+  <option value="9">Architektur</option>
+  <option value="10">Technik</option>
+  <option value="11">Naturwissenschaften - Medizin</option>
+  <option value="12">Ozeanien</option>
+  <option value="13">Afrika</option>
   </select>
+  
 
  </br><b>Autor: </b> <input type='text' name='autor' value=''/>
 
@@ -63,6 +64,7 @@
 
  
  <input type="submit" name="submit" class="btn btn-primary">
+
  </div>
  </form>
   
