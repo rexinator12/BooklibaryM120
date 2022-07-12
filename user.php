@@ -12,15 +12,14 @@
   <link rel="stylesheet" href="css.css">
   <?php
      include 'dataconn.php';
-     include 'getUsers.class.php';
-     include 'ViewUser.class.php';
+     include 'Model/getUsers.class.php';
+     include 'View/ViewUser.class.php';
     ?>
     <?php 
     ?>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>        
 
 
     <!-- Bootstrap CSS -->
@@ -30,7 +29,7 @@
     <title>Hello, world!</title>
     <?php require_once 'webbuild/header.php';?>
     <form>
-            <b>Search: </b> <input type='text' name='search_boxU' value=''/>
+            <b>Search: </b> <input class="inp" type='text' name='search_boxU' value=''/>
             <button class='input-group-text'><i class='fa fa-search'></i></button>
     </form>
     
@@ -45,7 +44,7 @@
     ?>
     </tbody>
     </table>
-    </div>
+    
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->

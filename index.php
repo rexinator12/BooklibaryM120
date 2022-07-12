@@ -21,6 +21,13 @@
     <title>Hello, world!</title>
     <?php require_once 'webbuild/header.php'
     ?>
+    <div class="index">
+    <h2> Willkommen zur Bibliothek!</h2>
+    <p> Dies ist der heilige Bibliothek der Bibliotheken. Ich hoffe, dass ihr hier viel spass haben werdet.<p>
+    <img src="bib.jpg" alt="alternativer_text" width="500px"/>
+   
+ </div>
+
 
     <!-- Optional JavaScript; choose one of the two! -->
 

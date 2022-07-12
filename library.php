@@ -12,8 +12,8 @@
   <link rel="stylesheet" href="css.css">
   <?php
      include 'dataconn.php';
-     include 'getBooks.class.php';
-     include 'ViewLibrary.class.php';
+     include 'Model/getBooks.class.php';
+     include 'View/ViewLibrary.class.php';
     ?>
     <?php 
     ?>
@@ -26,11 +26,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
  <body>
-    <title>Hello, world!</title>
+ <!-- Hier werden daten mit der Get methode ausgelesen und dann bei getBooks.class verwendet, um die sicht zu ändern -->
+    <title>Library</title>
     <?php require_once 'webbuild/header.php';?>
     <div class="search">
-    <form class="form-horizontal" action="library.php" method="POST">
-<b>Titel: </b> <input type='text' name='titel' value=''/>
+    <form class="form-horizontal" action="library.php" method="GET">
+<b>Titel: </b> <input class="inp" type='text' name='titel' value=''/>
 
  </br><select class="col-md-4-select" aria-label="Default select example" name="kat" id="fillt">
   <option value="" disabeld="" selected="">Open this select menu</option>
@@ -50,7 +51,7 @@
   </select>
   
 
- </br><b>Autor: </b> <input type='text' name='autor' value=''/>
+ </br><b>Autor: </b> <input class="inp" type='text' name='autor' value=''/>
 
  <div class="form-group">
   <label class="col-lg-2 control-label"><b>Zustand: </b></label>
@@ -60,29 +61,56 @@
     <input type="radio" name="zustand" value="S">Schlecht
  </div>
  </div>
-
-
- 
- <input type="submit" name="submit" class="btn btn-primary">
-
+ <input type="submit" class="btn btn-primary">
  </div>
  </form>
-  
+
+ <div class="box">
+ <form action="library.php" method="GET">
+ <label class="col-lg-2 control-label"><b>Kurztitel: </b></label>
+ <div class="col-lg-4">
+    <input type="radio" name="tit" value="asc">Aufsteigend
+    <input type="radio" name="tit" value="desc">Absteigend
+ </div>
+ <input type="submit" class="btn btn-primary">
+ </form>
+ </div>
+ <div class="box">
+ <form action="library.php" method="GET">
+ <label class="col-lg-2 control-label"><b>Kategorie: </b></label>
+ <div class="col-lg-4">
+    <input type="radio" name="katego" value="asc">Aufsteigend
+    <input type="radio" name="katego" value="desc">Absteigend
+ </div>
+ <input type="submit" class="btn btn-primary">
+ </form>
+ </div>
+
+ <div class="box">
+
+ <form action="library.php" method="GET">
+ <label class="col-lg-2 control-label"><b>Zustand: </b></label>
+ <div class="col-lg-4">
+    <input type="radio" name="zustandT" value="asc">Aufsteigend
+    <input type="radio" name="zustandT" value="desc">Absteigend
+ </div>
+ <input type="submit" class="btn btn-primary">
+ </form>
+   </div>
+
   
     
   
       
     <?php
-    require_once 'getBooks.class.php';
+    require_once 'Model/getBooks.class.php';
       $library = new ViewLibrary();
       $library->showAllBooks();
       
 ?>
     
 
-    </tbody>
-    </table>
-    </div>
+ 
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->

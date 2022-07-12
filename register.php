@@ -16,9 +16,9 @@
       <div class="col-12 col-md-8 col-lg-6 col-xl-5">
         <div class="card bg-dark text-white" style="border-radius: 1rem;">
           <div class="card-body p-5 text-center">
-
+             <!-- Daten werden mit post methode weitergeleitet -->
             <div class="mb-md-5 mt-md-4 pb-5">
-              <form action="register.inc.php" method="post">
+              <form action="Controller/register.inc.php" method="post">
               <h2 class="fw-bold mb-2 text-uppercase">Register</h2>
               <p class="text-white-50 mb-5">Please enter your information</p>
 

@@ -1,5 +1,5 @@
 <?php
-
+//hier werden die daten genommen von register.inc und werden kontrolliert
 class regichange extends Register{
     private $username;
     private $mail;
@@ -21,38 +21,38 @@ class regichange extends Register{
     }
     public function registered(){
         if($this->emptyIn() == false){
-            header("location: index.php?error=emptyinput");
+            header("location: ../index.php?error=emptyinput");
             exit;
         }
         if($this->invalidUsername() == false){
-            header("location: index.php?error=invalidUsername");
+            header("location: ../index.php?error=invalidUsername");
             exit;
         }
         if($this->invalidMail() == false){
-            header("location: index.php?error=invalidMail");
+            header("location: ../index.php?error=invalidMail");
             exit;
         }
         if($this->invalidFirstn() == false){
-            header("location: index.php?error=invalidFirstname");
+            header("location: ../index.php?error=invalidFirstname");
             exit;
         }
         if($this->invalidLastn() == false){
-            header("location: index.php?error=invalidLastname");
+            header("location: ../index.php?error=invalidLastname");
             exit;
         }
         if($this->checkPass() == false){
-            header("location: index.php?error=checkPass");
+            header("location: ../index.php?error=checkPass");
             exit;
         }
         if($this->checkIfexist() == false){
-            header("location: index.php?error=checkIfexist");
+            header("location: ../index.php?error=checkIfexist");
             exit;
         }
 
         $this->setUser($this->username, $this->firstn, $this->lastn, $this->password, $this->mail, $this->admin);
 
     }
-
+//parameter für gültige eingaben
     private function emptyIn(){
         $result;
         if(empty($this->username) || empty($this->firstn) || empty($this->lastn) || empty($this->mail)|| empty($this->password)|| empty($this->reppassword) ){

@@ -3,7 +3,8 @@
 class loginer extends Login{
     private $username;
     private $password;
-
+//hier wird geschaut, ob login leer ist
+//daten werden in get user gespeichert
 
     public function __construct($username,$password){
         $this->username = $username;
@@ -13,7 +14,7 @@ class loginer extends Login{
     }
     public function loginUser(){
         if($this->emptyIn() == false){
-            header("location: index.php?error=emptyinput");
+            header("location: ../index.php?error=emptyinput");
             exit;
         }
     

@@ -2,7 +2,7 @@
  session_start();
  if(empty($_SESSION["userID"])){
   $_SESSION["status"] = "You must login!";
-  header("location: login.php");
+  header("location: ../login.php");
  } else
  {
  ?>
@@ -21,9 +21,9 @@
     <title>Hello, world!</title>
     <?php require_once 'webbuild/header.php';
         require_once 'dataconn.php';
-        require_once 'getBooks.class.php';
+        require_once 'Model/getBooks.class.php';
 
-
+//nachdem man den augensymbol drückt, wird dies ausgeführt. Detailreichere inhalt. 
         class OpenView extends dbh{
           function ViewBooks(){
     if(isset($_GET['view'])){
